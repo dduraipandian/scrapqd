@@ -219,46 +219,6 @@ Integrating scrapqd with existing app
 
 **redirect_root:** Redirect root url to graphql ui if this is set to ``True``. This will not reflect, if there is already root route defined as above example.
 
-Test (for development)
-======================
-
-- Clone the github repository
-
-    .. code-block:: shell
-
-        git clone https://github.com/dduraipandian/scrapqd.git
-
-- create virtual environment to work
-
-    .. code-block:: shell
-
-        pip3 install virtualenv
-        virtualenv scrapqd_venv
-        source scrapqd_venv/bin/activate
-
-- install tox
-
-    .. code-block:: shell
-
-        pip install tox
-
-- run tox from the project root directory
-
-    - current tox have four python version - py37,py38,py39,py310
-    - check your python version
-
-        .. code-block:: shell
-
-            python3 --version
-
-            # Python 3.9.10
-
-    - once you get your version (example: use py39 for 3.9) to run tox
-
-        .. code-block:: shell
-
-            tox -e py39
-
 
 FAQs
 ====
@@ -281,6 +241,65 @@ FAQs
     - ``ERROR`` level is default logging. You can change this with ``SCRAPQD_LOG_LEVEL`` environment variable.
 
 .. inclusion-marker-do-not-remove-end-2
+
+Contribution
+============
+
+* Report bugs and request features in the `issue tracker <https://github.com/dduraipandian/scrapqd/issues>`_.
+
+* Submit pull requests for new functionalities and/or bug fixes. Please read `Submitting Patches`_ for the process.
+
+Submitting Patches
+==================
+
+- Follow `Test <test-for-development>`_ to test the ``main`` branch.
+- Read the relevant topic from the `Document <https://scrapqd.readthedocs.io/en/latest/>`_.
+- Make the required changes.
+- Create test cases for your changes.
+- Test your changes with tox as `Test <test-for-development>`_ in your local environment.
+- Feel free to add yourself to the `AUTHORS <AUTHORS>`_ file.
+- Once tests are 100% successful, Create a pull request.
+
+Test (for development)
+======================
+
+- Clone the github repository
+
+    .. code-block:: shell
+
+        git clone https://github.com/dduraipandian/scrapqd.git
+
+- Create virtual environment to work
+
+    .. code-block:: shell
+
+        pip3 install virtualenv
+        virtualenv scrapqd_venv
+        source scrapqd_venv/bin/activate
+
+- Install tox
+
+    .. code-block:: shell
+
+        pip install tox
+
+- Run tox from the project root directory
+
+    - Current tox have four python version - py37,py38,py39,py310
+    - Check your python version
+
+        .. code-block:: shell
+
+            python3 --version
+
+            # Python 3.9.10
+
+    - Once you get your version (example: use py39 for 3.9) to run tox
+
+        .. code-block:: shell
+
+            tox -e py39
+
 
 License
 =======
