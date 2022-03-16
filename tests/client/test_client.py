@@ -2,8 +2,18 @@ import unittest
 
 from scrapqd.client import execute_sync
 
+from tests import MockServer
+
 
 class TestClient(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.server = MockServer()
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.server
+
     def setUp(self):
         self.query = r"""
                     query test_query($url: String!, $name: GenericScalar!) {
@@ -782,7 +792,6 @@ class TestClient(unittest.TestCase):
         self.maxDiff = None
 
     def test_library_sample_query_with_variables(self):
-
         query_variables = {
             "url": "http://localhost:5000/scrapqd/sample_page/",
             "name": "local-testing"
