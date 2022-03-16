@@ -1,5 +1,5 @@
-import pathlib
 import logging
+import pathlib
 
 from flask import Flask, redirect, render_template_string
 from graphql_server.flask import GraphQLView

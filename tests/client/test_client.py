@@ -1,7 +1,6 @@
 import unittest
 
 from scrapqd.client import execute_sync
-
 from tests import MockServer
 
 

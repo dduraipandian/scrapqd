@@ -3,7 +3,6 @@ import unittest
 from graphql import graphql_sync
 
 from scrapqd.gql.schema import schema
-
 from tests import MockServer
 
 
