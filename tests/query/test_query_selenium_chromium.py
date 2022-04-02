@@ -3,15 +3,22 @@ import unittest
 from graphql import graphql_sync
 
 from scrapqd.gql.schema import schema
+from tests import MockServer
 
 
 class TestParserExtractText(unittest.TestCase):
-    def setUp(self):
-        self.variable_values = {
+    @classmethod
+    def setUpClass(cls):
+        cls.variable_values = {
             "url": "http://127.0.0.1:5000/scrapqd/sample_page/",
             "cache": True,
         }
-        self.maxDiff = None
+        cls.maxDiff = None
+        cls.server = MockServer()
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.server
 
     def test_query_text(self):
         expected = {

@@ -1,5 +1,5 @@
-import os
 import logging
+import os
 
 log_level = os.environ.get('SCRAPQD_LOG_LEVEL', logging.ERROR)
 

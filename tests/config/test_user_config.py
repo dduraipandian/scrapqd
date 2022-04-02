@@ -2,9 +2,18 @@ import unittest
 
 from scrapqd.client import execute_sync
 from scrapqd.settings import config
+from tests import MockServer
 
 
 class TestUserConfig(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.server = MockServer()
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.server
+
     def test_custom_user_config(self):
         """Testing custom user config"""
         self.assertEqual(config.LOCAL_CACHE_TTL, 20)
